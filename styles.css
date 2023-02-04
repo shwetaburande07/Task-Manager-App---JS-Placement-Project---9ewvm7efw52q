@@ -1,1 +1,245 @@
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 115vh;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.task-container {
+    width: 100%;
+    min-height: 450px;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 130px;
+}
+
+#open,
+#in-progress,
+#in-review,
+#done {
+    margin: 12.5px;
+    height: auto;
+    padding-bottom: 140px;
+    border-radius: 15px;
+}
+
+h3 {
+    border-radius: 15px 15px 0 0;
+}
+
+.status {
+    width: 25%;
+    background-color: rgba(128, 128, 128, 0.38);
+    position: relative;
+    padding: 60px 1rem 0.5rem;
+}
+
+.status h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #343434;
+    color: #f3f3f3;
+    margin: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+}
+
+#add-btn {
+    padding: 0.5rem 1rem;
+    background-color: #ccc;
+    outline: none;
+    border: none;
+    width: 100%;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#add-btn:hover {
+    background-color: #aaa;
+    cursor: pointer;
+}
+
+.task {
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+      rgba(15, 15, 15, 0.1) 0px 2px 4px;
+    border-radius: 4px;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    line-height: 0;
+}
+
+.close {
+    position: relative;
+    height: auto;
+    width: auto;
+    top: 2px;
+    margin-bottom: auto;
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.task:hover,
+.close:hover {
+    color: #343444;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal {
+    width: 450px;
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 0.3s ease-in-out;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.modal.active {
+    left: 50%;
+    top: 50%;
+}
+
+.modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modal .modal-body {
+    padding: 0.75rem;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+#overlay.active {
+    display: block;
+}
+
+#task-input {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin: 0.25rem;
+}
+
+#task-submit {
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 25%;
+    margin: 0.25rem;
+    background-color: #4caf50;
+    color: #f3f3f3;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+}
+
+#header-area {
+    top: 0;
+    height: 40px;
+    width: 100vw;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: lightblue;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* justify-content: flex-end; */
+}
+
+#heading {
+    margin-right: 100px;
+
+}
+
+.no-outline {
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.379);
+    position: absolute;
+    top: 7%;
+    left: 20px;
+    width: 160px;
+    border: hidden;
+    border-radius: 5px;
+    height: 5%;
+    text-align: center;
+    padding: 8px;
+}
+
+.no-outline:hover {
+    box-shadow: 5px 5px 5px lightgray;
+
+}
+
+#task-name {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+#task-description {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#task-heading-task {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    align-items: center;
+}
+
+#description {
+    display: flex;
+    width: auto;
+    height: 50px;
+    align-items: center;
+}
+
+

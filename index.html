@@ -1,1 +1,57 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="App.js"></script>
+
+</head>
+<body>
+    <header id="header-area">
+        <div id="heading">Task Manager Application</div>
+
+    </header>
+
+    <div class="new-task">
+        <span id="input-task" class="no-outline" data-target-modal = "#task-form">add new task</span>
+    </div>
+
+
+    <div class="modal" id="task-form">
+        <div class="modal-header">
+            <div class="title">create new task</div>
+                <button class="btn close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <label for="task-name">Task Name:</label><br>
+            <input type="text" id="task-name" placeholder="task name..."><br><br>
+            <label for="task-desc">Task Description:</label><br>
+            <textarea id="task-description" placeholder="task description..." rows="8" cols="55"></textarea>
+            <button id="task-submit" type="button">Add Task</button>
+        </div>
+    </div>
+
+    <div class="task-container">
+        <div class="status in-progress" id="open">
+            <h3>Open</h3>
+        </div>
+        <div class="status in-review" id="in-progress">
+            <h3>In Progress</h3>
+        </div>
+        <div class="status done" id="in-review">
+            <h3>Review</h3>
+        </div>
+        <div class="status" id="done">
+            <h3>Done</h3>
+        </div>
+    </div>
+
+    <div id="overlay"></div>
+
+
+</body>
+</html>
